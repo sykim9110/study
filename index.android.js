@@ -8,24 +8,78 @@ import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
-  Text,
   View
 } from 'react-native';
+
+import Svg,{
+    Circle,
+    Ellipse,
+    G,
+    LinearGradient,
+    RadialGradient,
+    Line,
+    Path,
+    Polygon,
+    Polyline,
+    Rect,
+    Symbol,
+    Text,
+    Use,
+    Defs,
+    Stop
+} from 'react-native-svg';
 
 export default class eidiotsProject extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
+          <Svg
+              height="200"
+              width="200"
+          >
+            <Ellipse
+                fill="#b7b0cc"
+                cx="35"
+                cy="35.5"
+                rx="35"
+                ry="35.5"
+            />
+            <Ellipse
+                fill="#5e5a6b"
+                cx="22.5"
+                cy="27.5"
+                rx="3.5"
+                ry="4.5"
+            />
+            <Ellipse
+                fill="#5e5a6b"
+                cx="47.5"
+                cy="27.5"
+                rx="3.5"
+                ry="4.5"
+            />
+            <Ellipse
+                fill="#b7b0cc"
+                cx="23"
+                cy="29"
+                rx="2"
+                ry="3"
+            />
+            <Ellipse
+                fill="#b7b0cc"
+                cx="48"
+                cy="29"
+                rx="2"
+                ry="3"
+            />
+            <Ellipse
+                fill="#6a667c"
+                cx="35"
+                cy="54.5"
+                rx="14"
+                ry="8.5"
+            />
+          </Svg>
       </View>
     );
   }
@@ -47,7 +101,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,
-  },
+  }
 });
 
 AppRegistry.registerComponent('eidiotsProject', () => eidiotsProject);

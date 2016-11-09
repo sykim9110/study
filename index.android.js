@@ -8,7 +8,8 @@ import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
-  View
+  View,
+  Animated
 } from 'react-native';
 
 import Svg,{
@@ -30,58 +31,34 @@ import Svg,{
 } from 'react-native-svg';
 
 export default class eidiotsProject extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      bounceValue: new Animated.Value(0)
+    };
+  }
   render() {
     return (
-      <View style={styles.container}>
-          <Svg
-              height="200"
-              width="200"
-          >
-            <Ellipse
-                fill="#b7b0cc"
-                cx="35"
-                cy="35.5"
-                rx="35"
-                ry="35.5"
-            />
-            <Ellipse
-                fill="#5e5a6b"
-                cx="22.5"
-                cy="27.5"
-                rx="3.5"
-                ry="4.5"
-            />
-            <Ellipse
-                fill="#5e5a6b"
-                cx="47.5"
-                cy="27.5"
-                rx="3.5"
-                ry="4.5"
-            />
-            <Ellipse
-                fill="#b7b0cc"
-                cx="23"
-                cy="29"
-                rx="2"
-                ry="3"
-            />
-            <Ellipse
-                fill="#b7b0cc"
-                cx="48"
-                cy="29"
-                rx="2"
-                ry="3"
-            />
-            <Ellipse
-                fill="#6a667c"
-                cx="35"
-                cy="54.5"
-                rx="14"
-                ry="8.5"
-            />
-          </Svg>
-      </View>
+      <Animated.Image
+        source={{uri: 'http://i.imgur.com/XMKOH81.jpg'}}
+        style={{
+          flex: 1,
+          transform: [
+            {scale: this.state.bounceValue} //바운스를 스케일 변수로 지정
+          ]
+        }}
+      />
     );
+  }
+  componentDidMount() {
+    this.state.bounceValue.setValue(1.5);    // Start large
+    Animated.spring(              // 기본적으로 스프링 디케이 타이밍
+      this.state.bounceValue,     // 바운스값 지정
+      {
+        toValue: 0.8,             // 작은사이즈 값 지정
+        friction: 1               // 탄력 지정
+      }
+    ).start();                    // 애니메이션 시작
   }
 }
 

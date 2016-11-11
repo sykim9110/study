@@ -25,6 +25,41 @@ import Svg,{
     Stop
 } from 'react-native-svg';
 
+class FadeInView extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      fadeAnim: new Animated.Value(0),
+    };
+  }
+  componentDidMount() {
+    Animated.timing(
+      this.state.fadeAnim,
+      {toValue: 1}
+    ).start();
+  }
+  render() {
+    return (
+      <Animated.View
+        style={{
+          flex: 1,
+          justifyContent: 'center',
+          alignItems: 'center',
+          backgroundColor: '#F5FCFF',
+          opacity: this.state.fadeAnim,
+          transform: [{
+            translateY: this.state.fadeAnim.interpolate({
+              inputRange: [0, 1],
+              outputRange: [200, 0]
+            })
+          }]
+        }}>
+        {this.props.children}
+      </Animated.View>
+    );
+  }
+}
+
 export default class eidiotsProject extends Component {
   constructor(props) {
     super(props);
@@ -75,7 +110,7 @@ export default class eidiotsProject extends Component {
   }
   render() {
     return (
-      <View style={styles.container}>
+      <FadeInView>
           <Animated.Image
             source={require('./jasan1.png')}
             style={{
@@ -96,7 +131,7 @@ export default class eidiotsProject extends Component {
             style={{margin:20, fontSize: 20, color:'lightblue'}}
             onPress={this._handleOnpressComposing}>handleOnpressComposing
           </Text>
-      </View>
+      </FadeInView>
     );
   }
   componentDidMount() {

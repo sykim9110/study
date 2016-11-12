@@ -12,6 +12,7 @@ import Second from './app/Second';
 import StateExplained from './app/StateExplained';
 import State from './app/State';
 import RNFetch from './app/RNFetch';
+import SeungyeonPin from './app/SeungyeonPin';
 
 export default class eidiotsProject extends Component {
   constructor(props) {
@@ -22,7 +23,7 @@ export default class eidiotsProject extends Component {
     return (
       <Navigator
         initialRoute={{
-          id: 'RNFetch'
+          id: 'SeungyeonPin'
         }}
         renderScene={
           this.navigatorRenderScene
@@ -43,6 +44,8 @@ export default class eidiotsProject extends Component {
           return (<State navigator={navigator} title='State' />);
         case 'RNFetch':
           return (<RNFetch navigator={navigator} title='RNFetch' />);
+        case 'SeungyeonPin':
+          return (<SeungyeonPin navigator={navigator} title='SeungyeonPin' />);
       }
   }
 }

@@ -4,7 +4,7 @@ import {
   StyleSheet,
   View,
   Text,
-  Animated
+  Navigater
 } from 'react-native';
 
 import Animate from './app/Animate';
@@ -16,7 +16,7 @@ export default class eidiotsProject extends Component {
   }
   render() {
     return (
-      <Animate />
+      <Text>hi</Text>
     );
   }
 }

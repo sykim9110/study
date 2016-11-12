@@ -3,7 +3,6 @@ import {
   Animated
 } from 'react-native';
 
-
 export default class FadeInView extends Component {
   constructor(props) {
     super(props);

@@ -8,8 +8,11 @@
   },
   "dependencies": {
     "react": "15.3.2",
+    "react-mixin": "^3.0.5",
     "react-native": "0.37.0",
-    "react-native-svg": "^4.3.1"
+    "react-native-scrollable-tab-view": "^0.6.0",
+    "react-native-svg": "^4.3.1",
+    "react-tween-state": "^0.1.5"
   },
   "jest": {
     "preset": "jest-react-native"

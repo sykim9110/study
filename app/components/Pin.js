@@ -6,12 +6,10 @@ import {
 } from 'react-native';
 
 import {
-  Back,
-  Heart,
-  More,
   PinIcon,
-  Share
 } from '../icons'
+
+import UtilityNavButton from './UtilityNavButton'
 
 export default class Pin extends Component {
   render() {
@@ -20,10 +18,10 @@ export default class Pin extends Component {
 
         <View style={styles.PinHeader}>
           <View style={styles.UtilityNav}>
-            <Back />
-            <Heart />
-            <Share />
-            <More />
+            <UtilityNavButton icon="Back" />
+            <UtilityNavButton icon="Heart" />
+            <UtilityNavButton icon="More" />
+            <UtilityNavButton icon="Share" />
           </View>
           <View style={styles.PinButtonContainer}>
             <View style={styles.PinButton}>

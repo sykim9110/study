@@ -3,7 +3,8 @@ import {
   Text,
   View,
   Animated,
-  StyleSheet
+  StyleSheet,
+  TouchableHighlight
 } from 'react-native';
 
 import FadeInView from './FadeInView';
@@ -56,6 +57,11 @@ export default class Animate extends Component {
         ]),
       ]).start();                    // start the sequence group
     }
+    onButtonPress() {
+      this.props.navigator.push({
+        id: 'Second'
+      });
+    }
     render() {
       return (
         <FadeInView>
@@ -75,10 +81,12 @@ export default class Animate extends Component {
               style={{margin:20, fontSize: 20, color:'lightblue'}}
               onPress={this._handleOnpressDecay}>handleOnpressDecay
             </Text>
-            <Text
-              style={{margin:20, fontSize: 20, color:'lightblue'}}
-              onPress={this._handleOnpressComposing}>handleOnpressComposing
-            </Text>
+            <TouchableHighlight onPress={this.onButtonPress.bind(this)}>
+              <Text
+                style={{margin:20, fontSize: 20, color:'lightblue'}}
+              >navigator
+              </Text>
+            </TouchableHighlight>
         </FadeInView>
       );
     }

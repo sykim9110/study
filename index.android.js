@@ -11,6 +11,7 @@ import Animate from './app/Animate';
 import Second from './app/Second';
 import StateExplained from './app/StateExplained';
 import State from './app/State';
+import RNFetch from './app/RNFetch';
 
 export default class eidiotsProject extends Component {
   constructor(props) {
@@ -21,7 +22,7 @@ export default class eidiotsProject extends Component {
     return (
       <Navigator
         initialRoute={{
-          id: 'Animate'
+          id: 'RNFetch'
         }}
         renderScene={
           this.navigatorRenderScene
@@ -40,6 +41,8 @@ export default class eidiotsProject extends Component {
           return (<StateExplained navigator={navigator} title='StateExplained' />);
         case 'State':
           return (<State navigator={navigator} title='State' />);
+        case 'RNFetch':
+          return (<RNFetch navigator={navigator} title='RNFetch' />);
       }
   }
 }

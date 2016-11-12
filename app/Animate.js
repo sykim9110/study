@@ -84,7 +84,8 @@ export default class Animate extends Component {
             <TouchableHighlight onPress={this.onButtonPress.bind(this)}>
               <Text
                 style={{margin:20, fontSize: 20, color:'lightblue'}}
-              >navigator
+              >
+                navigator
               </Text>
             </TouchableHighlight>
         </FadeInView>

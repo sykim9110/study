@@ -19,9 +19,9 @@ import Svg,{
 } from 'react-native-svg';
 
 const IDIOTS_COLOR = {
-  cls_3: '#a4c1ff',
-  cls_2: '#7d82ff',
-  cls_1: '#723cff'
+  cls_3: '#F58BA6',
+  cls_2: '#FD9280',
+  cls_1: '#FE7D7C'
 }
 
 export default class IdiotsLogo extends Component {

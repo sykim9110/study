@@ -16,6 +16,7 @@ import SeungyeonPin from './app/SeungyeonPin';
 import SlidingBox from './animate/SlidingBox';
 import Playground from './animate/Playground';
 import StudySpace from './animate/StudySpace';
+import SequenceAnim from './animate/components/Sequence';
 
 export default class eidiotsProject extends Component {
   constructor(props) {
@@ -55,6 +56,8 @@ export default class eidiotsProject extends Component {
           return (<Playground navigator={navigator} title='Playground' />);
         case 'StudySpace':
           return (<StudySpace navigator={navigator} title='StudySpace' />);
+        case 'SequenceAnim':
+          return (<SequenceAnim navigator={navigator} title='SequenceAnim' />);
       }
   }
 }

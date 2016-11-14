@@ -13,6 +13,8 @@ import StateExplained from './app/StateExplained';
 import State from './app/State';
 import RNFetch from './app/RNFetch';
 import SeungyeonPin from './app/SeungyeonPin';
+import SlidingBox from './animate/SlidingBox';
+import Playground from './animate/Playground';
 
 export default class eidiotsProject extends Component {
   constructor(props) {
@@ -23,7 +25,7 @@ export default class eidiotsProject extends Component {
     return (
       <Navigator
         initialRoute={{
-          id: 'SeungyeonPin'
+          id: 'Animate'
         }}
         renderScene={
           this.navigatorRenderScene
@@ -46,6 +48,10 @@ export default class eidiotsProject extends Component {
           return (<RNFetch navigator={navigator} title='RNFetch' />);
         case 'SeungyeonPin':
           return (<SeungyeonPin navigator={navigator} title='SeungyeonPin' />);
+        case 'SlidingBox':
+          return (<SlidingBox navigator={navigator} title='SlidingBox' />);
+        case 'Playground':
+          return (<Playground navigator={navigator} title='Playground' />);
       }
   }
 }

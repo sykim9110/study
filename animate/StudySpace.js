@@ -5,13 +5,13 @@ import {
   Text
 } from 'react-native';
 
-import EidiotsLogo from './components/EidiotsLogo';
+import IdiotsLogo from './components/IdiotsLogo';
 
 export default class StudySpace extends Component {
   render() {
     return (
       <View style={styles.container}>
-          <EidiotsLogo />
+          <IdiotsLogo />
       </View>
     );
   }

@@ -17,6 +17,13 @@ import SlidingBox from './animate/SlidingBox';
 import Playground from './animate/Playground';
 import StudySpace from './animate/StudySpace';
 import SequenceAnim from './animate/components/Sequence';
+import Timing from './animate/Timing';
+import TimingMultiple from './animate/TimingMultiple';
+import Spring from './animate/Spring';
+import Parallel from './animate/Parallel';
+import Sequence from './animate/Sequence';
+import Stagger from './animate/Stagger';
+import Namgon from './namgon';
 
 export default class eidiotsProject extends Component {
   constructor(props) {
@@ -27,7 +34,7 @@ export default class eidiotsProject extends Component {
     return (
       <Navigator
         initialRoute={{
-          id: 'StudySpace'
+          id: 'Namgon'
         }}
         renderScene={
           this.navigatorRenderScene
@@ -58,6 +65,18 @@ export default class eidiotsProject extends Component {
           return (<StudySpace navigator={navigator} title='StudySpace' />);
         case 'SequenceAnim':
           return (<SequenceAnim navigator={navigator} title='SequenceAnim' />);
+        case 'Timing':
+          return (<Timing navigator={navigator} title='Timing' />);
+        case 'TimingMultiple':
+          return (<TimingMultiple navigator={navigator} title='TimingMultiple' />);
+        case 'Spring':
+          return (<Spring navigator={navigator} title='Spring' />);
+        case 'Parallel':
+          return (<Parallel navigator={navigator} title='Parallel' />);
+        case 'Sequence':
+          return (<Sequence navigator={navigator} title='Sequence' />);
+        case 'Namgon':
+          return (<Namgon navigator={navigator} title='Namgon' />);
       }
   }
 }
